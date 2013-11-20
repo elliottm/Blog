@@ -5,7 +5,6 @@
 <%= @task.title %>
 </p>
 
-
 <p>
   <strong>Task description</strong>
   <%= @task.description %>
@@ -20,15 +19,7 @@
 <h2>Comments posted to this task: </h2>
 <% @task.comments.each do |comment| %>
 
-<p>
-  <strong>Commenter:</strong>
-<%= comment.commenter %>
-</p>
-
-<p>
-  <strong>Comment:</strong>
-<%= comment.body %>
-</p>
+<%= render @posts.comments %>
 
 <% end %>
 
@@ -36,21 +27,8 @@
 
 <h2> Add comment: <h2>
 
-<%= form_for ([@task, @task.comments.build]) do |f| %>
+<%= render "comments/form" %>
 
-<p>
-  <%= f.label :commenter %>
-  <%= f.text_field :commenter %>
-</p>
-
-<p>
-  <%= f.label :Comment %>
-  <%= f.text_field :body %>
-</p>
-
-<%= f.submit %>
-
-<% end %>
 <br>
 <%= link_to 'My tasks', tasks_path %>
 <%= link_to 'Edit', edit_task_path(@task) %>
