@@ -1,0 +1,22 @@
+<h1> Edit task:</h1>
+
+<p>
+<strong>Task title<strong>
+<%= @task.title %>
+</p>
+
+
+<p>
+  <strong>Task description</strong>
+  <%= @task.description %>
+</p>
+
+
+<p>
+  <strong>Owner:</strong>
+  <%= @task.owner %>
+</p>
+
+<%= render "form" %>
+
+<%= link_to 'Back', tasks_path %>
