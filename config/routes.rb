@@ -3,7 +3,9 @@ Blog::Application.routes.draw do
 
   root "welcome#index"
   
-  resources :tasks 
+  resources :tasks do
+    resources :comments
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.
