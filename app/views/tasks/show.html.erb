@@ -1,9 +1,9 @@
 <h1> Your task: </h1>
-
+<%= link_to 'My tasks', tasks_path %>
+<%= link_to 'Edit', edit_task_path(@task) %>
 <p>
 <strong>Task title</strong>
 <%= @task.title %>
-</p>
 
 <p>
   <strong>Task description</strong>
@@ -30,8 +30,10 @@
 <%= render "comments/form" %>
 
 <br>
-<%= link_to 'My tasks', tasks_path %>
-<%= link_to 'Edit', edit_task_path(@task) %>
+
+
+<a href="#" onclick="this.style.backgroundColor='#0099000'">Paint it red</a>
+
 
 
 

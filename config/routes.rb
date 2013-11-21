@@ -2,8 +2,9 @@ Blog::Application.routes.draw do
 
 
   root "welcome#index"
-  
+
   resources :tasks do
+    post 'vote' => 'votes#create'
     resources :comments
   end
 

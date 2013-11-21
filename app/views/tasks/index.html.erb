@@ -5,6 +5,8 @@
     <th>Title</th>
     <th>Description</th>
     <th>Owner</th>
+    <th>Priority votes</th>
+    <th>Comments count</th>
   </tr>
  
   <% @tasks.each do |task| %>
@@ -12,10 +14,15 @@
       <td><%= task.title %></td>
       <td><%= task.description %></td>
       <td><%= task.owner %></td>
+      <td class='votes-count' data-id="<%= task.id %>"><%= task.votes_total %></td>
+      <td><%= task.comments.count %></td>
       <td><%= link_to 'Show', task %></td>
       <td><%= link_to 'Edit', edit_task_path(task) %></td>
       <td><%= link_to 'Delete', task_path(task), method: :delete %></td>
+      <td><%= button_to '⬆', task_vote_path(task, direction: "up", format: :json), remote: true %></td>
+      <td><%= button_to '⬇', task_vote_path(task, direction: "down", format: :json), remote: true %></td>
     </tr>
+    <%# task.votes.inspect %>
   <% end %>
 </table>
 

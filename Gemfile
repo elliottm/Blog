@@ -6,6 +6,7 @@ group :test, :development do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'shoulda-matchers'
+  gem 'poltergeist'
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
