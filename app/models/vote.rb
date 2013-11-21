@@ -1,4 +1,5 @@
 class Vote < ActiveRecord::Base
+  
   belongs_to :task
 
   scope :up, -> { where(direction: 'up') }

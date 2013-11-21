@@ -7,6 +7,8 @@ group :test, :development do
   gem 'database_cleaner'
   gem 'shoulda-matchers'
   gem 'poltergeist'
+  gem 'devise'
+  # gem 'selenium-webdriver'
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

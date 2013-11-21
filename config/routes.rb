@@ -1,7 +1,9 @@
 Blog::Application.routes.draw do
 
 
-  root "welcome#index"
+  devise_for :users
+  root "welcome#index" 
+  # root :to "tasks#index"
 
   resources :tasks do
     post 'vote' => 'votes#create'
